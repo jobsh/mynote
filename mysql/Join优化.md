@@ -56,7 +56,7 @@
 
 **因此 MySQL 在关联字段有索引时，才会使用 NLJ，我们也可以称这种情况下的NLJ为INLJ（Index Nested-Loop Join），如果没索引，就会使用 Block Nested-Loop Join**，等下会细说这个算法。我们先来看下在有索引情况的情况下，使用 Nested-Loop Join 的场景（称为：**Index Nested-Loop Join**）。
 
-因为 MySQL 在关联字段有索引时，才会使用 NLJ，因此本节后面的内容所用到的 NLJ 都表示 Index Nested-Loop Join。
+因为 MySQL 在关联字段有索引时，才会使用 NLJ，因此本文后面的内容所用到的 NLJ 都表示 Index Nested-Loop Join。
 
 如何确定使用的是NLJ：一般 join 语句中，如果执行计划 Extra 中**未出现 Using join buffer**；则表示使用的 join 算法是 NLJ。
 
@@ -190,3 +190,4 @@ explain select * from t1 inner join t2 on t1.a = t2.a;
 ![图片描述](http://typicture.loopcode.online/image/5d3aae3a00015d6f16110183.png)在 Extra 字段中发现有 Using join buffer (Batched Key Access)，表示确实变成了 BKA 算法。
 
 PS：mysql8.0中同时也已经不存在BKA，代替的是hash join
+
