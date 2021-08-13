@@ -1,16 +1,46 @@
 ## Spring源码系列之容器启动流程
 
-刘进坤 [菜鸟飞呀飞](javascript:void(0);) *2019-09-12*
-
-
-
-> 点击上方`”菜鸟飞呀飞“`，即可关注微信公众号。
-
 ### Spring启动流程
 
 ------
 
-\1. Demo创建2. 启动3. 入口4. 基础概念5. AnnotationConfigApplicationContext的构造方法5.1 this()调用5.2 register(annotatedClasses)5.3 执行refresh()方法6. refresh()方法6.1 invokeBeanFactoryPostProcessors()6.2 registerBeanPostProcessors()6.3 initMessageSource()6.4 initApplicationEventMulticaster()6.5 onRefresh()6.6 registerListeners()6.7 finishBeanFactoryInitialization()6.8 finishRefresh()6.9 resetCommonCaches()7. 总结8. 计划10. 推荐性能监控工具
+1. Demo创建
+
+2. 启动
+
+3. 入口
+
+4. 基础概念
+
+5. AnnotationConfigApplicationContext的构造方法
+
+   5.1 this()调用
+
+   5.2 register(annotatedClasses)
+
+   5.3 执行refresh()方法6. refresh()方法
+
+​    6.1 invokeBeanFactoryPostProcessors()
+
+​	6.2 registerBeanPostProcessors()
+
+​	6.3 initMessageSource(
+
+​	6.4 initApplicationEventMulticaster()
+
+​	6.5 onRefresh()
+
+​	6.6 registerListeners()
+
+​	6.7 finishBeanFactoryInitialization()
+
+​	6.8 finishRefresh()
+
+​	6.9 resetCommonCaches()
+
+7. 总结
+8. 计划
+9. 推荐性能监控工具
 
 ------
 
